@@ -1,40 +1,54 @@
-# Regional_Sales_Analysis
+# Regional Sales & Profitability Performance (2014–2017)
 
-## Problem Statement
-Sales teams often lack a clear, data-driven understanding of regional performance, making it difficult to identify growth opportunities and optimize resources. Inconsistent revenue and profit performance across U.S. regions reduces the ability to allocate budgets effectively and scale high-performing segments.
+## 📌 Project Overview
+This project analyzes the sales performance of a fictional corporation to identify the core drivers of revenue and profitability. By transforming raw transactional data into a high-fidelity, interactive **Power BI dashboard**, this analysis enables leadership to move beyond "gut feeling" and make data-driven decisions regarding regional expansion, product pricing, and channel optimization.
 
-## Goal / Purpose
-Leverage 5 years of historical sales data to analyze and visualize regional performance. The project aims to uncover trends, evaluate profitability, and support strategic decision-making by identifying growth levers across regions, channels, products, and customers.
+## 🎯 Goal & Purpose
+The objective was to create an **Executive-Ready Dashboard** providing both a 30,000-foot strategic view and granular drill-down capabilities:
 
-## Key Visuals
-- Monthly Revenue Trend  
-- Top 10 Products by Revenue  
-- Top 10 States by Revenue  
-- Top 10 States by Order Count  
-- Sales by Channel  
-- Average Order Value (AOV) Distribution  
-- Unit Price Distribution for Top 10 Products  
-- Average Profit Margin by Channel
+* **Identify Profitability Drivers:** Pinpoint products and regions maintaining the highest margins, not just high volume.
+* **Customer Segmentation:** Analyze the relationship between sales volume and profit margin to identify "High-Value" vs. "Underperforming" customers.
+* **Operational Efficiency:** Evaluate sales channel performance (Wholesale vs. Distributor vs. Export) to optimize resource allocation.
+* **Seasonal Trend Analysis:** Uncover patterns in monthly sales to assist in inventory and budget planning.
 
-## Business Impacts / Insights
-- Pronounced Seasonality: January revenues average **$124M**, dipping to **$95M** in April.  
-- SKU Concentration: Products **26 & 25** together drive approximately **25%** of total sales.  
-- Channel Trade-Off: **Wholesale** captures **54%** of volume, while **Export** leads with **~38%** average margin.  
-- Geographic Dominance: California alone logs **7.6K orders ($230M)**; the **West region shows the largest swings**.  
-- Top Customers: **Aibox Company** and **State Ltd** are the most valuable customers in terms of revenue.
+## 📊 Key Visuals & Analysis
+The dashboard is strategically split into two primary focus areas:
 
-## Recommendations
-- Seasonal Promotions: Launch recovery campaigns in April and amplify January offers to smooth revenue swings.  
-- SKU Optimization: Focus on top products **26 & 25**, and evaluate pricing or phase out low-margin SKUs.  
-- Channel Expansion: Incentivize Export partnerships for high margins and introduce volume deals in Wholesale.  
-- Regional Investment: Replicate California’s success in other regions and boost marketing in the Northeast & Midwest.  
-- Margin Monitoring: Flag orders below **80% margin** and analyze cost drivers to uplift underperforming segments.
+### 1. Executive Sales Performance
+* **Dynamic KPIs:** Real-time tracking of **Total Revenue ($1.19bn)**, **Total Profit ($443.92M)**, and **Profit Margin (37.37%)**.
+* **Regional Deep Dive:** Comparison of "Top States by Revenue" (led by California and Illinois) vs. "Top States by Orders" to distinguish between volume-heavy and value-heavy markets.
+* **Monthly Sales Trend:** A minimalist time-series chart highlighting seasonal peaks and year-over-year stability.
 
-## Techniques Used
-- Filter engineering  
-- Exploratory Data Analysis (EDA)  
-- Jupyter Notebook  
-- Python libraries: **pandas**, **numpy**, **matplotlib**, **seaborn**
+### 2. Sales Drivers & Profitability Analysis
+* **Customer Segmentation Scatter Plot:** A "Revenue vs. Profit Margin" visualization used to segment the customer base into four distinct quadrants for targeted marketing.
+* **Average Order Value (AOV) Distribution:** A high-density frequency chart showing where the majority of customer spend occurs.
+* **Top 10 Products by Profit:** A targeted bar chart identifying the most profitable individual SKUs to inform pricing strategies.
 
+## 💡 Business Impacts & Insights
+* **Risk Mitigation:** Identified a high revenue concentration in California, suggesting a need for market diversification to reduce regional risk.
+* **Channel Optimization:** Determined that while **Wholesale** drives the majority of volume (54%), the **Export** channel provides critical margin support.
+* **Product Strategy:** Focusing promotions on high-yield "Top 10" products rather than low-margin volume drivers to maximize bottom-line growth.
 
+## 📸 Screenshots of Dashboard
+| Page 1: Executive Overview | Page 2: Drivers & Profitability |
+| :--- | :--- |
+| ![Executive Performance](https://github.com/JeeniyaShakya/Regional_Sales_Analysis/blob/main/Screenshot%202026-01-29%20162705.png) | ![Profitability Analysis](https://github.com/JeeniyaShakya/Regional_Sales_Analysis/blob/main/Screenshot%202026-01-29%20162727.png) |
 
+## 🛠️ Techniques Used
+The project followed a standard data analytics workflow combining **Python** for data engineering and **Power BI** for business intelligence:
+
+* **Business Understanding:** Defining the core problem statement and business objectives for the 2014-2017 period.
+* **Data Preparation & Cleaning (Python/Power Query):**
+    * Merged multiple relational Excel sheets (Sales Orders, Customers, Products, Regions, States, and Budgets).
+    * Standardized headers, handled null values, and converted column names to lowercase for consistency.
+    * Removed redundant columns based on domain knowledge.
+* **Exploratory Data Analysis (EDA):** Leveraged **Pandas, NumPy, Matplotlib, and Seaborn** for initial data inspection and descriptive statistics.
+* **Advanced Data Modeling (DAX):** Created complex weighted average measures (e.g., `Profit Margin %` and `Avg Profit Margin per Product`) to ensure accurate aggregation across different dimensions.
+* **Interactive Dashboarding:** Developed a multi-page interactive report featuring dynamic slicing, cross-filtering, and a cohesive UI/UX.
+
+---
+
+### How to use
+1. Clone the repository.
+2. Open the `.pbix` file in **Power BI Desktop**.
+3. (Optional) Review the `eda_notebook.ipynb` for the initial Python data cleaning process.
